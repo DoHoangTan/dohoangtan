@@ -4,11 +4,13 @@
   <li><a href="https://linkedin.com/in/dohoangtan-nt" target="_blank">LinkedIn</a></li>
   <li><a href="https://x.com/DoHoangTanX" target="_blank">X (Twitter)</a></li>
   <li><a href="https://dohoangtan.com" target="_blank">Personal Blog (coming soon)</a></li>
-  <li>Email: <a href="mailto:hello@dohoangtan.com">hello@dohoangtan.com</a></li>
+  
 </ul>
 
 <!--
 **DoHoangTan/dohoangtan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+<li>Email: <a href="mailto:hello@dohoangtan.com">hello@dohoangtan.com</a></li>
 
 Here are some ideas to get you started:
 

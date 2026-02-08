@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Tree Visualization - MWG Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            font-family: 'Urbanist', sans-serif;
+            color: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .canvas-container {
+            width: 1200px;
+            height: 750px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* SVG Styling */
+        .tree-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .node-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            fill: #475569;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .data-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            fill: #166534;
+            font-weight: 700;
+        }
+
+        .branch-path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+        }
+
+        .positive-trend { stroke: #22c55e; } /* Xanh - Tốt */
+        .negative-trend { stroke: #ef4444; } /* Đỏ - Trễ */
+        .bottleneck { stroke: #f59e0b; }     /* Vàng - Nghẽn */
+        .trunk { stroke: #cbd5e1; stroke-width: 12; }
+
+        .ai-canopy {
+            fill: rgba(59, 130, 246, 0.05);
+            stroke: #3b82f6;
+            stroke-width: 2;
+            stroke-dasharray: 8 4;
+        }
+
+        .frozen-zone-rect {
+            fill: rgba(239, 68, 68, 0.05);
+            stroke: #ef4444;
+            stroke-width: 1;
+            stroke-dasharray: 4 4;
+        }
+
+        /* Hover interaction */
+        .node:hover circle {
+            r: 10;
+            fill: #166534;
+            transition: all 0.3s ease;
+        }
+
+        .header {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+
+        .header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            color: #0f172a;
+        }
+
+        .header h1 span { color: #166534; }
+
+        .legend {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .ai-layer-tag {
+            position: absolute;
+            top: 150px;
+            right: 100px;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #bfdbfe;
+        }
+    </style>
+</head>
+<body>
+
+<div class="canvas-container">
+    <div class="header">
+        <h1>MÔ HÌNH <span>CÂY XU HƯỚNG</span> (TREND TREE)</h1>
+        <p class="text-slate-500">Phân tích đồng bộ Vận hành & Dữ liệu - Case Study: MWG (2021-2024)</p>
+        <p class="text-xs text-slate-400 mt-2">Học viên: Đỗ Hoàng Tấn - MSSV: 2441822067</p>
+    </div>
+
+    <div class="ai-layer-tag">
+        <i class="fa-solid fa-microchip"></i> AI DECISION LAYER (Information Velocity)
+    </div>
+
+    <svg class="tree-svg" viewBox="0 0 1000 650">
+        <!-- AI Canopy (Vòm thông tin) -->
+        <path class="ai-canopy" d="M 200 200 Q 500 50 800 200" />
+        
+        <!-- Trunk (Thân cây: Năng lực vận hành) -->
+        <line class="trunk" x1="500" y1="600" x2="500" y2="400" />
+        <text x="515" y="550" class="node-label" style="fill: #166534">Operations Trunk</text>
+        <text x="515" y="575" class="text-xs italic" style="fill: #94a3b8">Hiệu suất TS: 2.06</text>
+
+        <!-- Branch Left: Receivables (Độ trễ dòng tiền - ĐỎ) -->
+        <path class="branch-path negative-trend" d="M 500 450 C 400 450 300 400 200 350" />
+        <circle cx="200" cy="350" r="6" fill="#ef4444" />
+        <text x="120" y="320" class="node-label">Kỳ thu tiền (Trễ)</text>
+        <text x="120" y="350" class="data-value" style="fill: #ef4444">37.48 ngày</text>
+        <text x="120" y="375" class="text-xs" style="fill: #64748b">Tăng 125% vs 2022</text>
+
+        <!-- Branch Right: Inventory (Tối ưu vật lý - XANH) -->
+        <path class="branch-path positive-trend" d="M 500 450 C 600 450 700 400 800 300" />
+        <circle cx="800" cy="300" r="6" fill="#22c55e" />
+        <text x="815" y="270" class="node-label">Vòng quay tồn kho</text>
+        <text x="815" y="300" class="data-value" style="fill: #16a34a">6.10 lần</text>
+        <text x="815" y="325" class="text-xs" style="fill: #64748b">Hàng đi nhanh hơn</text>
+
+        <!-- Top Branch: Profit (Nút thắt - VÀNG) -->
+        <path class="branch-path bottleneck" d="M 500 400 L 500 250" />
+        <rect x="420" y="180" width="160" height="70" rx="10" class="frozen-zone-rect" />
+        <text x="500" y="170" text-anchor="middle" class="node-label" style="fill: #d97706">FROZEN ZONE (2023)</text>
+        <text x="500" y="210" text-anchor="middle" class="data-value" style="fill: #d97706">0.14%</text>
+        <text x="500" y="235" text-anchor="middle" class="text-xs" style="fill: #d97706">Biên lợi nhuận ròng</text>
+
+        <!-- AI Decision Nodes (Các hạt dữ liệu từ AI hỗ trợ) -->
+        <g class="node">
+            <circle cx="400" cy="150" r="5" fill="#2563eb" />
+            <text x="330" y="140" class="text-[10px]" fill="#2563eb">Dự báo nhu cầu</text>
+        </g>
+        <g class="node">
+            <circle cx="600" cy="150" r="5" fill="#2563eb" />
+            <text x="610" y="140" class="text-[10px]" fill="#2563eb">Cảnh báo tồn kho</text>
+        </g>
+        
+        <!-- Roots (Gốc rễ: Dữ liệu BCTC sạch) -->
+        <path class="trunk" style="stroke-width: 4; opacity: 0.1;" d="M 500 600 L 450 640" />
+        <path class="trunk" style="stroke-width: 4; opacity: 0.1;" d="M 500 600 L 550 640" />
+        <text x="500" y="640" text-anchor="middle" class="text-xs" fill="#94a3b8">DỮ LIỆU BCTC ĐÃ KIỂM TOÁN (HOSE)</text>
+    </svg>
+
+    <div class="legend">
+        <h4 class="text-sm font-bold mb-3 border-b border-slate-200 pb-2 text-slate-800">CHÚ GIẢI VẬN HÀNH</h4>
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+            <span class="text-xs text-slate-600">Physical Efficiency (Tồn kho tối ưu)</span>
+        </div>
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <span class="text-xs text-slate-600">Cash Latency (Độ trễ dòng tiền)</span>
+        </div>
+        <div class="flex items-center gap-3 mb-2">
+            <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+            <span class="text-xs text-slate-600">AI Information Velocity (Tốc độ thông tin)</span>
+        </div>
+        <div class="mt-4 p-2 bg-red-50 border border-red-200 rounded text-[10px] text-red-600 italic">
+            *Nghịch lý: Hàng đi nhanh (59 ngày) nhưng tiền về chậm (37 ngày) tạo áp lực lên điểm nghẽn lợi nhuận.
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

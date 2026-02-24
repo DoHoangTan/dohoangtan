@@ -3,11 +3,15 @@
 <ul>
   <li><a href="https://linkedin.com/in/dohoangtan-nt" target="_blank">LinkedIn</a></li>
   <li><a href="https://facebook.com/hoangtan.a1" target="_blank">Facebook</a></li>
-  <li> <a href="#" onclick="alert('Discord: thuy_thien')">Discord (DM)</a></div>
+  <li> <a href="#" onclick="alert('Discord: thuy_thien')">Discord (DM)</a></li>
 
 
   
 </ul>
+
+
+<footer>© 2026 Đỗ Hoàng Tấn. All rights reserved.</footer>
+
 
 <!--
 **DoHoangTan/dohoangtan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.

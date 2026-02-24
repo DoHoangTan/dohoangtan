@@ -9,7 +9,14 @@
   
 </ul>
 
+<h2>📱 Zalo</h2>
 
+  <img
+    src="https://raw.githubusercontent.com/DoHoangTan/dohoangtan/main/m%C3%A3%20zalo%20179.jpg"
+    alt="Zalo QR - Đỗ Hoàng Tấn"
+    width="220"
+    style="border-radius:12px; border:1px solid #eee;"
+  />
 <footer>© 2026 Đỗ Hoàng Tấn. All rights reserved.</footer>
 
 

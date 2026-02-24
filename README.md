@@ -3,13 +3,23 @@
 <ul>
   <li><a href="https://linkedin.com/in/dohoangtan-nt" target="_blank">LinkedIn</a></li>
   <li><a href="https://x.com/DoHoangTanX" target="_blank">X (Twitter)</a></li>
-  <li><a href="https://dohoangtan.com" target="_blank">Personal Blog (coming soon)</a></li>
+
+  <li><a href="https://facebook.com/hoangtan.a1" target="_blank">Facebook Page</a></li>
+
+
+
   
 </ul>
 
 <!--
 **DoHoangTan/dohoangtan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
+  <li><a href="https://dohoangtan.com" target="_blank">Personal Blog (coming soon)</a></li>
+    <li><a href="https://behance.net/dohoangtan" target="_blank">Behance</a></div>
+    <li><a href="https://github.com/DoHoangTan" target="_blank">GitHub</a></div>
+    <li><a href="https://www.youtube.com/channel/YourChannel" target="_blank">YouTube</a></div>
+    <li><a href="https://tiktok.com/@DoHoangTan.tech" target="_blank">TikTok</a></div>
+    <li><a href="https://discord.gg/YourInviteLink" target="_blank">Discord</a></div>
+    
 <li>Email: <a href="mailto:hello@dohoangtan.com">hello@dohoangtan.com</a></li>
 
 Here are some ideas to get you started:

@@ -1,4 +1,4 @@
-<h1>Hello, World!</h1>
+<h1>Hello!</h1>
 <h2>🔗 Connect with me</h2>
 <ul>
   <li><a href="https://linkedin.com/in/dohoangtan-nt" target="_blank">LinkedIn</a></li>

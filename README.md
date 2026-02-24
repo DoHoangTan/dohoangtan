@@ -2,10 +2,8 @@
 <h2>🔗 Connect with me</h2>
 <ul>
   <li><a href="https://linkedin.com/in/dohoangtan-nt" target="_blank">LinkedIn</a></li>
-  <li><a href="https://x.com/DoHoangTanX" target="_blank">X (Twitter)</a></li>
-
-  <li><a href="https://facebook.com/hoangtan.a1" target="_blank">Facebook Page</a></li>
-
+  <li><a href="https://facebook.com/hoangtan.a1" target="_blank">Facebook</a></li>
+  <li> <a href="#" onclick="alert('Discord: thuy_thien')">Discord (DM)</a></div>
 
 
   
@@ -22,6 +20,8 @@
     
 <li>Email: <a href="mailto:hello@dohoangtan.com">hello@dohoangtan.com</a></li>
 
+ <li><a href="https://x.com/DoHoangTanX" target="_blank">X (Twitter)</a></li>
+ 
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ...
